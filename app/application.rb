@@ -25,7 +25,7 @@ class Application
     elsif req.path.match(/add/)
       item_to_add = req.params["item"]
       if @@items.include?(item_to_add)
-        resp.write "#{item_to_add} is one of our items"
+        resp.write "added #{item_to_add}"
         @@cart << item_to_add
       else
         resp.write "Couldn't find #{item_to_add}"
