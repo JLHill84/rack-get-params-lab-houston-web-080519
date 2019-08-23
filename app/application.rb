@@ -26,6 +26,7 @@ class Application
       search_term = req.params["item"]
       if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
+        @@items << search_term
       else
         resp.write "Couldn't find #{search_term}"
       end
